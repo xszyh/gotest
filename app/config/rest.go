@@ -4,6 +4,6 @@ type Config struct{
 	Port string
 }
 
-GetConfig() *Config{
+func GetConfig() *Config{
 	return &Config{"8011"}
 }

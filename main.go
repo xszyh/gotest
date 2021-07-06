@@ -1,11 +1,12 @@
 package main
 import(
-	"log"
-	"github.com/xszyh/gotest/config"
+	// "log"
+	"github.com/xszyh/gotest/app/config"
+	"github.com/xszyh/gotest/app/entrypoint"
 )
 
 func main(){
 	conf := config.GetConfig()
-	app := NewRestApp(conf)
+	app := entrypoint.NewRestApp(conf)
 	app.Run()
 }

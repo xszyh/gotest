@@ -1,7 +1,8 @@
-package main
+package entrypoint
 import(
 	"github.com/gin-gonic/gin"
-	"github.com/xszyh/gotest/config"
+	"github.com/xszyh/gotest/app/config"
+	"net/http"
 )
 
 type RestApp struct{
