@@ -1,9 +1,9 @@
 package config
 
-type Config struct{
+type Config struct {
 	Port string
 }
 
-func GetConfig() *Config{
+func GetConfig() *Config {
 	return &Config{"8011"}
 }

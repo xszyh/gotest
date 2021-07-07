@@ -1,22 +1,23 @@
 package entrypoint
-import(
+
+import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/xszyh/gotest/app/config"
 	"github.com/xszyh/gotest/app/service"
-	"net/http"
 	"log"
-	"fmt"
+	"net/http"
 )
 
-type RestApp struct{
+type RestApp struct {
 	Config *config.Config
 }
 
-func NewRestApp(conf *config.Config)*RestApp{
+func NewRestApp(conf *config.Config) *RestApp {
 	return &RestApp{conf}
 }
 
-func (a RestApp)Run(){
+func (a RestApp) Run() {
 	r := gin.New()
 
 	r.GET("/ping", Pong)
@@ -31,7 +32,7 @@ func Pong(c *gin.Context) {
 	service := service.NewUserService()
 	user := service.GetUserInfo(userId)
 
-	ret = fmt.Sprintf("%s %s %d", ret, user.Name, user.Age) 
+	ret = fmt.Sprintf("%s %s %d", ret, user.Name, user.Age)
 
 	c.String(http.StatusOK, ret)
 }

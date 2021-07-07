@@ -1,14 +1,14 @@
 package service
 
-import(
+import (
 	"github.com/xszyh/gotest/app/model"
 )
 
 type UserService struct{}
 
-func NewUserService()*UserService{
+func NewUserService() *UserService {
 	return &UserService{}
 }
-func (u UserService)GetUserInfo(userId string)*model.UserInfo{
+func (u *UserService) GetUserInfo(userId string) *model.UserInfo {
 	return model.GetUserFromDb(userId)
 }
